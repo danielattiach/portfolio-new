@@ -1,30 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import Loader from 'react-loader-spinner';
 import axios from 'axios';
-import { PacmanLoader } from 'react-spinners';
+import Repo from '../../components/Repo/Repo';
+
+import './Projects.css';
 
 const Projects = () => {
-    const [state, setState] = useState({ repos: [] });
-
-    const fetchRepos = async () => {
-        const res = await axios.get('https://api.github.com/users/danielattiach/repos');
-        const repos = await res.data;
-        setState({ repos });
-    };
+    const [state, setState] = useState({repos: []});
 
     useEffect(() => {
+        const fetchRepos = async () => {
+            const res = await axios.get('https://api.github.com/users/danielattiach/repos');
+            const repos = await res.data;
+            setState({ repos })
+        };
         fetchRepos();
     }, []);
 
     if (state.repos.length === 0) {
-        return <PacmanLoader/>
+        return <Loader
+            type="Bars"
+            color="#000"
+            height={100}
+            width={100}
+            className="loader"
+        />
     }
 
     return (
-        <>{state.repos.map((repo, index) => (
-            <div className="repo" key={index}>
-                {repo.name}
-            </div>
-        ))}</>
+        <>
+            <h1 id="projects">Projects</h1>
+            {state.repos.map((repo, index) => (
+                <Repo repo={repo} key={index}/>
+            ))}
+        </>
     );
 };
 

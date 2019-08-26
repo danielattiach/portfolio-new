@@ -1,0 +1,44 @@
+.extra-content div {
+    text-align: center;
+}
+
+h3 {
+    margin-right: 15px;
+}
+
+ul#question-list {
+    list-style-type: none;
+}
+
+ul#question-list li {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+li svg {
+    margin-left: 10px;
+    transition: 0.4s;
+}
+
+li.not-answered svg {
+    border: 1px solid  black;
+    border-radius: 100%;
+    color: transparent;
+}
+
+li.not-answered:hover {
+    cursor: pointer;
+}
+
+li.not-answered:hover svg {
+    color: black;
+    transition: 0.4s;
+}
+
+li.correct svg {
+    color: var(--green);
+}
+
+li.incorrect svg {
+    color: var(--red);
+}

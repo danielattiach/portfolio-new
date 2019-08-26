@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import About from './pages/About/About';
 import Skills from './pages/Skills/Skills';
 import Projects from './pages/Projects/Projects';
+import Theory from './pages/Theory/Theory';
 
 import './App.css';
 
@@ -15,6 +16,7 @@ const  App = () => {
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/skills" component={Skills}/>
                 <Route exact path="/projects" component={Projects}/>
+                <Route exact path="/theory" component={Theory}/>
             </div>
         </>
     );

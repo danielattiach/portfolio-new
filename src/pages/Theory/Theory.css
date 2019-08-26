@@ -1,0 +1,39 @@
+.theory-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: calc(100% - 56px);
+}
+
+.theory-container {
+    text-align: right;
+}
+
+.theory-progress {
+    margin-bottom: 10px;
+}
+
+.next-question,
+.theory-progress {
+    text-align: center;
+}
+
+.next-question button {
+    border: 0;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+#correct-answers {
+    color: var(--green);
+}
+
+#incorrect-answers {
+    color: var(--red);
+}
+
+#correct-answers,
+#incorrect-answers {
+    margin: 0 5px;
+}
